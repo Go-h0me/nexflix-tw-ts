@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Banner from '../components/Banner'
@@ -7,6 +6,10 @@ import requests from '../utils/requests'
 
 import {Movie} from '../typings'
 import Row from '../components/Row'
+import useAuth from '../hooks/useAuth'
+import { useRecoilValue } from 'recoil'
+import { modalState } from '../atoms/modalAtom'
+import Modal from '../components/Modal'
 
 
 //lay trong typing ra va tat ca cho vao props chay lay du lieu trong mang movie
@@ -36,6 +39,14 @@ const Home = ({
 }: Props) => {
   // console.log(netflixOriginals)
 
+  const {loading} = useAuth()
+const showModal = useRecoilValue(modalState)
+//same bottom
+// const [showModal,setShowModal] = useState(false)
+
+
+  if(loading) return null
+
   return (
     <div
       className="relative h-screen bg-gradient-to-b  lg:h-[140vh]
@@ -61,7 +72,7 @@ const Home = ({
           {/* title & movies lay trong props Row */}
         </section>
       </main>
-      {/* Modal */}
+      {showModal && <Modal/>}
     </div>
   )
 }

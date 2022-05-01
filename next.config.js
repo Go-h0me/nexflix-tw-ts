@@ -7,6 +7,7 @@ module.exports = {
       'upload.wikimedia.org',
       'occ-0-1190-2774.1.nflxso.net',
       'unsplash.com',
+      'assets.nflxext.com',
     ],
   },
 }

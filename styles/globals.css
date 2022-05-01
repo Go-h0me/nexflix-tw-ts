@@ -6,7 +6,7 @@
 
 @layer base {
     body {
-        @apply bg-[#252424] text-white !scrollbar
+        @apply bg-[#252424] text-white !scrollbar-thin
         !scrollbar-track-transparent !scrollbar-thumb-red-600
     }
     header {
@@ -26,8 +26,17 @@
     }
     .bannerButton {
         @apply flex items-center gap-x-2 rounded px-5 py-1.5 font-semibold
-        transition hover:opacity-80 md:py-2.5 md:px-8 md:text-xl
+        transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl
         
 
+    }
+    .input {
+        @apply w-full rounded bg-gray-600 px-5 py-3.5 placeholder-[gray]
+        outline-none focus:bg-[#454545]
+    }
+    .modalButton {
+        @apply flex h-11 w-11 items-center justify-center rounded-full
+        border-[gray] border-2 bg-[#2a2a2a]/60 transition hover:border-white 
+        hover:bg-white/10
     }
 }
