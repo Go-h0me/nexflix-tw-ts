@@ -27,12 +27,11 @@ function Row({ title, movies }: Props) {
           ? scrollLeft - clientWidth
           : scrollLeft + clientWidth
 
-          rowRef.current.scrollTo({left:scrollTo,behavior:'smooth'})
+      rowRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' })
     }
   }
 
   // console.log(rowRef.current?.scrollLeft, rowRef.current?.clientWidth)
-  
 
   return (
     <div className="h-40 space-y-0.5 md:space-y-2">
